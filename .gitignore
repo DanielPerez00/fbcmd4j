@@ -1,4 +1,8 @@
 ### Java ###
+
+# Ignorar vscode
+*.json
+
 # Compiled class file
 *.class
 
