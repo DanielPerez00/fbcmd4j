@@ -32,7 +32,6 @@ public class App {
         logger.error(me.getId());
         logger.error(me.getName());
         logger.error(me.getEmail());
-        logger.error(me.getRelationshipStatus());
 
   }
 
