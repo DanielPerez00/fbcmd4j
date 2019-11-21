@@ -1,8 +1,5 @@
 ### Java ###
 
-# Ignorar vscode
-*.json
-
 # Compiled class file
 *.class
 
@@ -47,3 +44,11 @@ gradle-app.setting
 **/build/
 
 # End of https://www.gitignore.io/api/java,gradle
+
+# Que no se suba mi token
+facebook4j.properties
+.settings
+.classpath
+.bin
+.factorypath
+.project
