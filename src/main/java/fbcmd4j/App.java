@@ -9,9 +9,17 @@ import facebook4j.ResponseList;
 import facebook4j.User;
 import facebook4j.auth.AccessToken;
 import org.apache.logging.log4j.Logger;
+import org.checkerframework.common.reflection.qual.NewInstance;
 import org.apache.logging.log4j.LogManager;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Scanner;
+
 public class App {
+
+    static Scanner input = new Scanner(System.in);
+
     private static final Logger logger = LogManager.getLogger(App.class);
 
     public String getGreeting() {
@@ -29,26 +37,66 @@ public class App {
             e.printStackTrace();
         }
 
-        logger.error(me.getId());
-        logger.error(me.getName());
-        logger.error(me.getEmail());
+        logger.debug(me.getId());
+        logger.debug(me.getName());
+        logger.debug(me.getEmail());
 
+        Integer opcion = 1;
+
+        while (opcion != 0){
+
+        opcion = App.getopcion();
+
+        try {
+            switch (opcion) {
+            case 1:
+
+            logger.error(facebook.getHome());
+
+                break;
+            case 2:
+            logger.error(facebook.getFeed());
+
+                break;
+            case 3:
+            logger.error(facebook.postStatusMessage("Chale que sad esto no jala"));
+
+                break;
+            case 4:
+            logger.error(facebook.postLink(new URL("https://media.giphy.com/media/hs6uT1cOjq0VLkI66r/giphy.gif")));
+
+                break;
+
+            default:
+
+                break;
+            }
+
+        } catch (FacebookException | MalformedURLException e) {
+       
+     }
+
+    }
+
+             
+ }
+
+    public static Integer getopcion(){
+        System.out.println("1. Obtener NewsFeed)"); 
+        System.out.println("2. Obtener Publicaciones en el muro)"); 
+        System.out.println("3. Hacer Publicacion en el muro)"); 
+        System.out.println("4. Hacer Publicacion con link en el muro)"); 
+        System.out.println("0. Cerra Aplicacion)"); 
+        System.out.println("Elige una opcion (numero)");     
+        Integer opcion;
+        opcion = input.nextInt();
+        return opcion;
+        
+
+    
   }
 
 
-/*
-        Account yourPageAccount = accounts.get(0);  // if index 0 is your page account.
-
-        System.out.println(yourPageAccount.getName());
-*/
-/*
-        facebook.setOAuthAppId("617023078702206", "006a3cfd7e9b07d0ae377897af736661");
-        facebook.setOAuthPermissions(
-                "public_profile,email,user_age_range,user_birthday,user_friends,user_gender,user_hometown,user_likes,user_link,user_location,user_photos,user_posts,user_status,user_tagged_places,user_videos,publish_pages,publish_to_groups");
-        facebook.setOAuthAccessToken(new AccessToken(
-                "EAAIxLeFsnH4BAJZCOmsT07TGdJwMg1ZC2murYW1ZB1ofQQXa8hhLyyBXYOtdXVsoGbQSm7iZAwXdvMftedOLOYIRR8r9hLZBU1b1iG9xELcAITPUnZBRWHASekvJ4AucZCpFnagTr9YckeDXze7htM6rrKW3etYai9YcSMZCcSgyTwZDZD",
-                null));
-*/
 
 }
 
