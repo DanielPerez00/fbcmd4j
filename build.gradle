@@ -36,3 +36,8 @@ application {
     // Define the main class for the application
     mainClassName = 'fbcmd4j.App'
 }
+
+run{
+  standardInput = System.in 
+
+}
