@@ -51,29 +51,30 @@ public class App {
             switch (opcion) {
             case 1:
 
-            logger.error(facebook.getHome());
+            logger.debug(facebook.getHome());
 
                 break;
             case 2:
-            logger.error(facebook.getFeed());
+            logger.debug(facebook.getFeed());
 
                 break;
             case 3:
-            logger.error(facebook.postStatusMessage("Chale que sad esto no jala"));
+            logger.debug(facebook.postStatusMessage("Chale que sad esto no jala"));
 
                 break;
             case 4:
-            logger.error(facebook.postLink(new URL("https://media.giphy.com/media/hs6uT1cOjq0VLkI66r/giphy.gif")));
+            logger.debug(facebook.postLink(new URL("https://media.giphy.com/media/hs6uT1cOjq0VLkI66r/giphy.gif")));
 
                 break;
 
             default:
 
-                break;
+                break; 
             }
 
         } catch (FacebookException | MalformedURLException e) {
-       
+        System.out.println("No se pudo realizar la accion, cheque los permisos de la app."); 
+        System.out.println(" "); 
      }
 
     }
